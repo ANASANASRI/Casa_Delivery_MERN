@@ -17,11 +17,10 @@ const ItemList = ({item}) => {
           </Link>
             
             <Card.Text as="div">
-               <div className="mb-3">
-               
-               <Rating rating={item.rating} review={item.numReviews}></Rating>
-               </div>
+              <div className="mb-3">
               
+              <Rating rating={item.rating} review={item.numReviews}></Rating>
+              </div>
             </Card.Text>
             <Card.Text as="h3">${item.price}</Card.Text>
           </Card.Body>

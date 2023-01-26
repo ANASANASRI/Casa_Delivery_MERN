@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Col, Container, Form, Row,Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { AddShippingAddress } from '../../redux/actions/cartActions';
 import CheckoutSteps from './CheckoutSteps';
 import './checkoutsteps.css'
 
 const Shipping = () => {
     const shippingAddress = useSelector(state => state.cart.shippingAddress)
-   
     const dispatch= useDispatch()
     const [address, setAddress] = useState(shippingAddress.address)
     const [city, setCity] = useState(shippingAddress.city)

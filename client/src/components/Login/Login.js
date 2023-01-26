@@ -1,11 +1,11 @@
 import React, {  useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import  { initializeApp } from "firebase/app";
 import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
+    getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
 } from "firebase/auth";
 
 import "./login.css";

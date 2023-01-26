@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route,Routes} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -16,39 +16,27 @@ import OrderHistory from './components/OrderHistory/OrderHistory';
 
 function App() {
   return (
-    <Routes>
-      <Header></Header>
-      
+    <>
+    <Header />
+    
       <div className="main container py-3">
-      <Route path="/login">
-          <Login></Login>
-        </Route>
-        <Route  path="/item/:id">
-          <ItemDetails></ItemDetails>
-        </Route>
-        <Route  path="/cart/:id?">
-          <CartPage></CartPage>
-        </Route>
-        <PrivateRoute path="/shipping">
-          <Shipping></Shipping>
-        </PrivateRoute>
-        <PrivateRoute path="/payment">
-          <PaymentMethod></PaymentMethod>
-        </PrivateRoute>
-        <PrivateRoute path="/confirm">
-          <ConfirmOrder></ConfirmOrder>
-        </PrivateRoute>
-        <PrivateRoute path="/order/:id">
-          <MakePayment></MakePayment>
-        </PrivateRoute>
-        <PrivateRoute path="/orderhistory">
-          <OrderHistory></OrderHistory>
-        </PrivateRoute>
-        <Route exact path="/">  <Home></Home> </Route>
+        <Routes>
+          <Route path="/item/:id" element={<ItemDetails/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="Shipping" element={<Shipping/>}/>
+          <Route path="/payment" element={<PaymentMethod/>}/>
+          <Route path="/Confirm" element={<ConfirmOrder/>}/>
+          <Route path="/order/:id" element={<MakePayment/>}/>
+          <Route path="/orderhistory" element={<OrderHistory/>}/>
+          <Route path="/CartPage" element={<CartPage/>}/>
+          <Route path="/PrivateRoute" element={<PrivateRoute/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
       </div>
 
-      <Footer></Footer>
-    </Routes>
+    <Footer />
+    </>
+    
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Route } from "react-router";
+import { Navigate, Route } from "react-router-dom";
 
 
 const PrivateRoute = ({ children, ...rest }) => {

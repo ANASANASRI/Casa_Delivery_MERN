@@ -2,6 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import homeheader from "./homeheader.css";
+import facebook from "../../../images/facebook.png";
+import Twitter from "../../../images/logo-twitter-png-5860.png";
+import linkedin from "../../../images/icons8-linkedin-circled-48.png";
 
 const HomeHeader = () => {
     return (
@@ -11,7 +14,7 @@ const HomeHeader = () => {
                 <div className="home-wrapper d-grid">
                     <div className="col-left">
                         
-                        <h1>Enjoy our <br/> majestic meals</h1>
+                        <h1>CASA<br/>DELIVERY</h1>
 
                         <p>Vestibulum sed augue ac lorem rutrum congue. Donec cursus mollis sapien, non vulputate odio
                             congue id. Sed mattis, tortor nec facilisis laoreet, mauris magna finibus nisl, eu pulvinar
@@ -22,9 +25,9 @@ const HomeHeader = () => {
                             <Link to="#" className="search-btn"> Search</Link>
                         </div>
                         <div className="social-icons d-flex">
-                            <a href="https://linkedin.com/in/rakibul21" target="_blank" rel="noreferrer noopener"> <img src="images/facebook.svg" alt="facebook"/></a>
-                            <a href="https://twitter.com/_rakibul" target="_blank" rel="noreferrer noopener"> <img src="images/twitter.svg" alt="twitter"/></a>
-                            <a href="https://linkedin.com/in/rakibul21" target="_blank" rel="noreferrer noopener" > <img src="images/linkedin.svg" alt="Linkedin"/></a>
+                            <a href="https://github.com/ANASANASRI" target="_blank" rel="noreferrer noopener"> <img src={facebook} alt="facebook"/></a>
+                            <a href="https://twitter.com/anasanasri_" target="_blank" rel="noreferrer noopener"> <img src={Twitter} alt="twitter"/></a>
+                            <a href="https://www.linkedin.com/in/anasanasri/" target="_blank" rel="noreferrer noopener" > <img src={linkedin} alt="Linkedin"/></a>
                         </div>
 
                     </div>

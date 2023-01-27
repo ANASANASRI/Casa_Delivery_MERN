@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { logout } from '../../redux/actions/userActions';
+import logo from '../../images/logo.png';
 
 
 const Header = () => {
@@ -21,8 +22,7 @@ const Header = () => {
           <Navbar.Brand>
               <img
                 alt="logo"
-                src="/images/logo/logo3.png"
-                
+                src={logo}
                 height="70"
                 className="d-inline-block align-top"
               />{" "}

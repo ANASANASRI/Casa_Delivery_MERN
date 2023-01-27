@@ -15,31 +15,26 @@ import OrderHistory from './components/OrderHistory/OrderHistory';
 
 function App(){
   return (
-
-    <Router>
-    <Header />
-    
-      <div className="main container py-3">
-        
-          <Routes>
-          <Route path="/item/:id" element={ <ItemDetails/> }/>
-          <Route path="/login" element={ <Login/> }/>
-          <Route path="Shipping" element={ <Shipping/> }/>
-          <Route path="/payment" element={ <PaymentMethod/> }/>
-          <Route path="/Confirm" element={ <ConfirmOrder/> }/>
-          <Route path="/order/:id" element={ <MakePayment/> }/>
-          <Route path="/orderhistory" element={ <OrderHistory/> }/>
-          <Route path="/CartPage" element={ <CartPage/> }/>
-          <Route path="/Privat</Routes>eRoute" element={ <PrivateRoute/> }/>
-          <Route path="/" element={ <Home/> }/>
-          </Routes>
-        
-      </div>
-
-    <Footer />
-    </Router>
-
-    
+          <Router>
+            <Header />
+              <div className="main container py-3">
+                
+                  <Routes>
+                  <Route path="/item/:id" element={ <ItemDetails/> }/>
+                  <Route path="/login" element={ <Login/> }/>
+                  <Route path="Shipping" element={ <Shipping/> }/>
+                  <Route path="/payment" element={ <PaymentMethod/> }/>
+                  <Route path="/Confirm" element={ <ConfirmOrder/> }/>
+                  <Route path="/order/:id" element={ <MakePayment/> }/>
+                  <Route path="/orderhistory" element={ <OrderHistory/> }/>
+                  <Route path="/CartPage" element={ <CartPage/> }/>
+                  <Route path="/Privat" element={ <PrivateRoute/> }/>
+                  <Route path="/" element={ <Home/> }/>
+                  </Routes>
+                
+              </div>
+            <Footer />
+          </Router>
   );
 }
 

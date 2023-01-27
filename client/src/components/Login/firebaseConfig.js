@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const firebaseConfig = {
       apiKey: process.env.REACT_APP_apiKey,

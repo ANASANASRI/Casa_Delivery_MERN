@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Col, Image, ListGroup, Row, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router'

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CheckoutSteps from './CheckoutSteps';

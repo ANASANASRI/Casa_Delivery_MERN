@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import './homeheader.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import homeheader from "./homeheader.css";
 
 const HomeHeader = () => {
     return (

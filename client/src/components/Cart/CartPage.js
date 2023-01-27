@@ -14,22 +14,22 @@ const CartPage = () => {
     const cart= useSelector(state=> state.cart)
     const {cartItems} = cart
   
-   useEffect(() =>{
+  useEffect(() =>{
 
     if (location.search) {
       dispatch(addToCart(id, qty))
       
     }
-   },[dispatch, qty, id, location.search])
+  },[dispatch, qty, id, location.search])
 
-   const removeCartItem= (id)=>{
-       console.log('clicked')
-       dispatch(removeFromCart(id))
-   }
-   const checkOutHandler=()=>{
-       history.push('/shipping')
+  const removeCartItem= (id)=>{
+      console.log('clicked')
+      dispatch(removeFromCart(id))
+  }
+  const checkOutHandler=()=>{
+      history.push('/shipping')
 
-   }
+  }
     return (
       <Row>
           
@@ -57,7 +57,7 @@ const CartPage = () => {
                         >
                         {[...Array(item.countInStock).keys()].map((count)=>(
                             <option key={count+1} value={count+1}>
-                               { count+1}
+                              { count+1}
                             </option>
                         ))}
 

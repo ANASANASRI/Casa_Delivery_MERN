@@ -61,3 +61,5 @@ const makePayment = asyncHandler(async (req, res) => {
       throw new Error("Order Details not found...");
     }
 })
+
+module.exports = { createOrder, makePayment,getOrders ,getOrderById};

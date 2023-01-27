@@ -1,15 +1,15 @@
-import asyncHandler from 'express-async-handler'
-import Order from '../models/orders.js'
+const asyncHandler = require('express-async-handler');
+const Order = require('../models/orders.js');
 
-export const createOrder= ('/', asyncHandler(async (req, res)=>{
+const createOrder = asyncHandler(async (req, res) => {
     const {
-      orderItems,
-      shippingAddress,
-      paymentMethod,
-      itemsPrice,
-      taxPrice,
-      shippingPrice,
-      totalPrice,
+        orderItems,
+        shippingAddress,
+        paymentMethod,
+        itemsPrice,
+        taxPrice,
+        shippingPrice,
+        totalPrice,
     } = req.body;
     
     const order = new Order({
@@ -21,54 +21,37 @@ export const createOrder= ('/', asyncHandler(async (req, res)=>{
         taxPrice,
         shippingPrice,
         totalPrice,
-      })
+    });
   
-    const orderDone= await order.save()
+    const orderDone = await order.save();
 
-    if (orderDone) {
-        res.json(orderDone)
-        
+    if (orderDone._id) {
+        res.json(orderDone);
+    } else {
+        res.status(404).json({ message: 'Problem with creating order' });
     }
-    else {
-        res.status(404)
-        throw new Error('Problem with creating order')
-    }
+});
 
-
-}))
-
-
-/// get order by id
-export const getOrderById = ('/:id', asyncHandler(async (req, res)=>{
-  
-  const order = await Order.findById(req.params.id).populate('user', 'name email')
+const getOrderById = asyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id).populate('user', 'name email');
     if (order) {
-      res.json(order);
+        res.json(order);
     } else {
-      res.status(404);
-      throw new Error("Order Details not found...");
+        res.status(404).json({ message: "Order Details not found..." });
     }
-}))
+});
 
-
-/// get orders by user id
-export const getOrders = ('/', asyncHandler(async (req, res)=>{
-  
-  const orders = await Order.find(req.user._id)
+const getOrders = asyncHandler(async (req, res) => {
+    const orders = await Order.find({ user: req.user._id });
     if (orders) {
-      res.json(orders);
+        res.json(orders);
     } else {
-      res.status(404);
-      throw new Error("Order History not found...");
+        res.status(404).json({ message: "Order History not found..." });
     }
-}))
+});
 
-/// make payment : change ispaid true
-export const makePayment = ('/:orderId', asyncHandler(async (req, res)=>{
-
-  
-  
-  const updatePayment = await Order.findOneAndUpdate({_id:req.params.orderId}, {isPaid:true}, {
+const makePayment = asyncHandler(async (req, res) => {
+    const updatePayment = await Order.findOneAndUpdate({ _id: req.params.orderId}, {isPaid:true}, {
     new: true
   })
     if (updatePayment.isPaid) {
@@ -77,4 +60,4 @@ export const makePayment = ('/:orderId', asyncHandler(async (req, res)=>{
       res.status(404);
       throw new Error("Order Details not found...");
     }
-}))
+})

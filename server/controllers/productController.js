@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler'
-import Product from '../Models/productModel.js'
+import Product from '../models/products.js'
 
 /// fetching all items
 /// public route

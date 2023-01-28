@@ -13,8 +13,8 @@ return res.json("user already exist");
 }
 
 const salt = await bcrypt.genSalt(10);
-const password = await bcrypt.hash(req.body.password, salt);
-const user = await User.create({ name, email, password });
+const hashedPassword = await bcrypt.hash(req.body.password, salt);
+const user = await User.create({ name, email, hashedPassword });
 
 if (user) {
 const token = jwt.sign(

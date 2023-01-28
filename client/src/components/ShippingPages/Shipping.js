@@ -77,7 +77,7 @@ const Shipping = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button className='mt-3 btn-block' type='submit' variant='primary'>
+        <Button className='mt-3 btn-block butnn' type='submit' variant='primary'>
           Continue
         </Button>
       </Form>

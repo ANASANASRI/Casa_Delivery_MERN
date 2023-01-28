@@ -6,7 +6,7 @@ const Footer = () => {
     return (
       <footer>
         <p className="footer-heart text-center">
-          Made with &#10084; by{" "}
+          by{" "}
           <a href="https://www.linkedin.com/in/anasanasri/">Anas ANASRI</a>
         </p>
       </footer>

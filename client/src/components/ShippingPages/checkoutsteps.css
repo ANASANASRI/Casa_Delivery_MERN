@@ -7,6 +7,10 @@
     overflow: auto;
   }
   
+  .butnn{
+    background-color: #F44748;
+    border-color: #FCC45E;
+  }
   .step {
     margin: 5px;
     border: 0;
@@ -15,7 +19,7 @@
     letter-spacing: 1px;
     
     padding: 10px 10px 10px 12px;
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
    
     font-weight: bold;
@@ -29,9 +33,9 @@
     cursor: pointer;
   }
   .active-bar {
-    background: #0b2031;
+    background: #FCC45E;
     cursor: pointer;
-    color: white;
+    color: #F44748;
     border-radius: 2px;
   }
   

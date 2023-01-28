@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
+import headercsr from "./headerCss.css";
 import { logout } from '../../redux/actions/userActions';
 import logo from '../../images/logo.png';
 
@@ -16,14 +17,14 @@ const Header = () => {
   }
     return (
       <header>
-        <Navbar className="py-1" bg="dark" variant="dark"  expand="lg">
+        <Navbar className="py-1 navbar navbar" variant="dark"  expand="lg">
           <Container>
           <Link to="/">
           <Navbar.Brand>
               <img
                 alt="logo"
                 src={logo}
-                height="70"
+                height="60"
                 className="d-inline-block align-top"
               />{" "}
             </Navbar.Brand>

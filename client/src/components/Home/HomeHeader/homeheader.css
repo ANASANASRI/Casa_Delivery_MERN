@@ -3,7 +3,10 @@ input:focus {
     outline: none;
   }
   .img-fluid {
+    padding-top: 10px;
     width: 100%;
+    display: block;
+    margin: 0 auto;
   }
   .d-grid {
     display: grid;
@@ -22,8 +25,8 @@ input:focus {
     padding: 13px 35px;
     font-size: 14px;
     font-weight: 400;
-    background-color: #e42e7e;
-    color: white;
+    background-color: #F44748;
+    color: #fcc55e;
     border-radius: 50px;
     letter-spacing: 1.1px;
     box-shadow: 0px 10px 20px rgb(108 14 69 / 30%);
@@ -36,7 +39,7 @@ input:focus {
   .search-btn:hover {
     transform: scale(1.02);
     color: #fdf1f3;
-    box-shadow: 0px 10px 20px rgba(6, 3, 32, 0.4); /* rgba(237, 90, 108, 0.4) */
+    box-shadow: 0px 10px 20px rgba(6, 3, 32, 0.4);
   }
   
   .col-left,
@@ -45,17 +48,17 @@ input:focus {
   }
 
 .home-wrapper {
-    padding-top: 5px;
+    padding-top: 0px;
     height: 100%;
     min-height: 85vh;
     align-items: center;
   }
   .home-wrapper .col-left p {
-    width: 395px;
+    width: 495px;
   }
   .search-food {
     width: 395px;
-    margin-top: 63px;
+    margin-top: 50px;
     position: relative;
     background-color: #fdf1f3;
     border-radius: 50px;
@@ -74,13 +77,13 @@ input:focus {
     margin-right: 5px;
   }
   .social-icons {
-    margin-top: 50px;
+    margin-top: 40px;
     justify-content: flex-start;
   }
   .social-icons a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
     box-shadow: 0px 20px 18px 4px rgb(205 180 194 / 57%);
     display: flex;
     justify-content: center;
@@ -96,18 +99,25 @@ input:focus {
   }
 
 
-  /* media queries */
+/* media queries */
 @media (min-width: 768px) {
+  .col-left {
+    padding-top: 0;
+    margin-top: 0;
+}
     .home-wrapper,
     .content-col-wrapper {
-      grid-template-columns: repeat(2, 1fr);
+      padding-top: 0;
+      display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
     }
   }
   
   @media (min-width: 768px) and (max-width: 1023px) {
     
     .home {
-      padding: 50px 0;
+      padding: 10px 0;
     }
     .home-wrapper {
       min-height: auto;
@@ -128,7 +138,7 @@ input:focus {
   @media (max-width: 767px) {
     
     .home {
-      padding: 50px 0;
+      padding: 10px 0;
     }
     .home-wrapper .col-left p {
       width: 100%;
@@ -142,10 +152,10 @@ input:focus {
       margin-bottom: 30px;
     }
     .col-right {
-      order: -1;
+      text-align: center;
     }
     .col-left h1{
-        margin-top: 10px;
+        margin-top: 0px;
         text-align: center;
     }
     
@@ -158,6 +168,3 @@ input:focus {
     }
     
   }
-  
-  
-  

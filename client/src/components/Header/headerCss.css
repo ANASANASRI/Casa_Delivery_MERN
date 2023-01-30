@@ -4,6 +4,15 @@
   animation: move-gradient 15s ease infinite;
 }
 
+.fa-user{
+  margin-left: 20px;
+}
+
+.fas{
+  color: aliceblue;
+  margin-left: 10px;
+}
+
 @keyframes move-gradient {
   0% {
     background-position: 0% 50%;

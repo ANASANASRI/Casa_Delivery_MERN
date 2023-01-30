@@ -29,24 +29,31 @@ const Header = () => {
               />{" "}
             </Navbar.Brand>
             </Link>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
+                
                 <Link to="/cart">
-                <Nav.Link> <i className="fas fa-shopping-cart"> Cart</i> </Nav.Link>
+                    <i className="fas fa-cart-shopping">Cart</i> 
                 </Link>
+
               {userInfo ? <NavDropdown title={userInfo.name} id="username">
+                
               <Link to="/orderhistory">
               <NavDropdown.Item >Order History</NavDropdown.Item>
               </Link>
+
                 <NavDropdown.Item onClick={logoutHandler}>
                   Logout
                 </NavDropdown.Item>
-        </NavDropdown> :
-          <Link to="/login">
-          <Nav.Link> <i className="fas fa-user"> </i> Sign In</Nav.Link>
-          </Link>
-        }
+
+              </NavDropdown> :
+              
+                <Link to="/login">
+                  <i className="fas fa-user">Sign In</i> 
+                </Link>
+              }
         </Nav>
             </Navbar.Collapse>
           </Container>

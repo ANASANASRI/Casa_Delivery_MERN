@@ -1,81 +1,94 @@
-const User = require("../models/users.js");
+const User = require("../models/users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+
+///////////////////////////////////////////////////////////////////////////
+
 const userRegister = async (req, res) => {
-const { name, email } = req.body;
+const { name, email, password } = req.body;
 
-// check if user already exist
-const userExist = await User.findOne({ email });
-if (userExist) {
-res.status(409);
-return res.json("user already exist");
-}
+try {
+    // Check if the user already exists
+    const userExist = await User.findOne({ email });
+    if (userExist) {
+    return res.status(409).json({ error: "User already exists" });
+    }
 
-const salt = await bcrypt.genSalt(10);
-const hashedPassword = await bcrypt.hash(req.body.password, salt);
-const user = await User.create({ name, email, hashedPassword });
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
-if (user) {
-const token = jwt.sign(
-{ id: user._id, email: user.email },
-process.env.JWT_SECRET,
-{
-expiresIn: "30d",
-}
-);
-res.json({
-id: user._id,
-name,
-email,
-isAdmin: user.isAdmin,
-token,
-});
+    // Create the user
+    const user = await User.create({ name, email, password: hashedPassword });
+
+    // Generate the JWT
+    const token = jwt.sign(
+    { id: user._id, email: user.email },
+    process.env.JWT_SECRET,
+    { expiresIn: "30d" }
+    );
+
+    // Return the user and the JWT
+    return res.json({
+    id: user._id,
+    name,
+    email,
+    isAdmin: user.isAdmin,
+    token,
+    });
+} catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Failed to create user" });
 }
 };
+
+
+////////////////////////////////////////////////////////////
 
 const userAuth = async (req, res) => {
 const { email, password } = req.body;
 
 try {
-const user = await User.findOne({ email });
-if (!user) throw new Error("Invalid email or password");
-const isMatch = await bcrypt.compare(password, user.password);
-if (!isMatch) throw new Error("Invalid email or password");
-const token = jwt.sign(
-{ id: user._id, email: user.email },
-process.env.JWT_SECRET,
-{
-expiresIn: "30d",
-}
-);
-res.json({
-id: user._id,
-name: user.name,
-email: user.email,
-isAdmin: user.isAdmin,
-token,
-});
+    // Find the user
+    const user = await User.findOne({ email });
+    if (!user) {
+    return res.status(401).json({ error: "Invalid email or password" });
+    }
+
+    // Compare the passwords
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+    return res.status(401).json({ error: "Invalid email or password" });
+    }
+
+    // Generate the JWT
+    const token = jwt.sign(
+    { id: user._id, email: user.email },
+    process.env.JWT_SECRET,
+    { expiresIn: "30d" }
+    );
+
+    // Return the user and the JWT
+    return res.json(user);
 } catch (error) {
-res.status(401);
-console.error("Invalid email or password");
-res.json("Invalid email or password");
+    console.error(error);
+    return res.status(500).json({ error: "Failed to authenticate user" });
 }
 };
+
+////////////////////////////////////////////////////////////////////////////
+
 
 const getUser = async (req, res) => {
-const user = await User.findById(req.user._id);
+const user = await User.findById(req.params.id);
 if (user) {
-res.json({
-id: user._id,
-name: user.name,
-email: user.email,
-isAdmin: user.isAdmin,
-});
+res.json(user);
 } else {
 res.status(404);
-throw new Error("User not found");
+throw new Error("user Not Found...");
 }
 };
 
-module.exports = { userRegister, userAuth, getUser };
+
+module.exports = {userRegister,userAuth,getUser};

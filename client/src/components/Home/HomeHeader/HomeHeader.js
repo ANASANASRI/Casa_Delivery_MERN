@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import homeheader from "./homeheader.css";
-import githubk from "../../../images/icons8-github-40 (1).png";
+import github from "../../../images/icons8-github-40 (1).png";
 import Twitter from "../../../images/icons8-twitter-circled-40.png";
 import linkedin from "../../../images/icons8-linkedin-circled-40 (1).png";
 import cd1 from "../../../images/cd1.png";
@@ -30,7 +30,7 @@ const HomeHeader = () => {
                             <Link to="#" className="search-btn">Chercher</Link>
                         </div>
                         <div className="social-icons d-flex">
-                            <a href="https://github.com/ANASANASRI" target="_blank" rel="noreferrer noopener"> <img src={githubk} alt="facebook"/></a>
+                            <a href="https://github.com/ANASANASRI" target="_blank" rel="noreferrer noopener"> <img src={github} alt="facebook"/></a>
                             <a href="https://twitter.com/anasanasri_" target="_blank" rel="noreferrer noopener"> <img src={Twitter} alt="twitter"/></a>
                             <a href="https://www.linkedin.com/in/anasanasri/" target="_blank" rel="noreferrer noopener" > <img src={linkedin} alt="Linkedin"/></a>
                         </div>

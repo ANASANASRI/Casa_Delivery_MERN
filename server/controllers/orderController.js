@@ -32,6 +32,8 @@ const createOrder = asyncHandler(async (req, res) => {
     }
 });
 
+//////////////////////////////////////////////////////////////////
+
 const getOrderById = asyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email');
     if (order) {
@@ -41,6 +43,8 @@ const getOrderById = asyncHandler(async (req, res) => {
     }
 });
 
+//////////////////////////////////////////////////////////////////
+
 const getOrders = asyncHandler(async (req, res) => {
     const orders = await Order.find({ user: req.user._id });
     if (orders) {
@@ -49,6 +53,9 @@ const getOrders = asyncHandler(async (req, res) => {
         res.status(404).json({ message: "Order History not found..." });
     }
 });
+
+//////////////////////////////////////////////////////////////////
+
 
 const makePayment = asyncHandler(async (req, res) => {
     const updatePayment = await Order.findOneAndUpdate({ _id: req.params.orderId}, {isPaid:true}, {
@@ -60,6 +67,6 @@ const makePayment = asyncHandler(async (req, res) => {
       res.status(404);
       throw new Error("Order Details not found...");
     }
-})
+});
 
 module.exports = { createOrder, makePayment,getOrders ,getOrderById};

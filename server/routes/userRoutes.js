@@ -1,11 +1,11 @@
 const express=require("express")
-const route=express.Router()
+const route = express.Router()
 const userController=require("../controllers/userController.js")
 
 
 route.post("/",userController.userRegister)
 route.post("/login",userController.userAuth)
-route.get("/profile",userController.getUser)
+route.get("/profile/:id",userController.getUser)
 
 
 module.exports=route

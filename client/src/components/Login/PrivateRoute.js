@@ -8,11 +8,8 @@ const PrivateRoute = ({ children, ...rest }) => {
   const user= useSelector(state => state.user)
   const {userInfo} = user
   useEffect(()=>{
-     
-     
-
   },[])
- 
+
   return (
     <Route
       {...rest}

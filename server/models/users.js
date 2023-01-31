@@ -20,6 +20,11 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    isLivreur: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
   }
 )
 

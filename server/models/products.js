@@ -18,15 +18,16 @@ const productSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
+    resto: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'resto',
+    },
     name: {
       type: String,
       required: true,
     },
     image: {
-      type: String,
-      required: true,
-    },
-    brand: {
       type: String,
       required: true,
     },

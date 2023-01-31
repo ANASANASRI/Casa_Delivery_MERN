@@ -34,14 +34,14 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
                 
-                <Link to="/cart">
+                <Link to="/CartPage">
                     <i className="fas fa-cart-shopping">Cart</i> 
                 </Link>
 
               {userInfo ? <NavDropdown title={userInfo.name} id="username">
                 
               <Link to="/orderhistory">
-              <NavDropdown.Item >Order History</NavDropdown.Item>
+                <i>Order History</i>
               </Link>
 
                 <NavDropdown.Item onClick={logoutHandler}>
@@ -54,6 +54,7 @@ const Header = () => {
                   <i className="fas fa-user">Sign In</i> 
                 </Link>
               }
+              
         </Nav>
             </Navbar.Collapse>
           </Container>

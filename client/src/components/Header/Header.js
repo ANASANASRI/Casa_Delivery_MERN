@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,7 +38,7 @@ const Header = () => {
               <Nav className="ml-auto" >
                 
                 <Link to="/CartPage">
-                    <i className="fas fa-cart-shopping">Cart</i> 
+                    <FontAwesomeIcon icon={faShoppingCart} className="fas"/><h7 className="fass">Cart</h7>
                 </Link>
 
               {userInfo ? <NavDropdown title={userInfo.name} id="username">
@@ -51,7 +54,7 @@ const Header = () => {
               </NavDropdown> :
               
                 <Link to="/login">
-                  <i className="fas fa-user">Sign In</i> 
+                  <FontAwesomeIcon icon={faUser} className="fas"/><h7 className="fass">Sign In</h7>
                 </Link>
               }
               

@@ -4,11 +4,12 @@
   animation: move-gradient 15s ease infinite;
 }
 
-.fa-user{
-  margin-left: 20px;
+.fas{
+  color: aliceblue;
+  margin-left: 30px;
 }
 
-.fas{
+.fass{
   color: aliceblue;
   margin-left: 10px;
 }

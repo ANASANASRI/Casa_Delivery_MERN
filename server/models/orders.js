@@ -7,6 +7,11 @@ const orderSchema = mongoose.Schema(
       required: true,
       ref: 'users',
     },
+    product: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'products',
+    },
     orderItems: [
       {
         name: { type: String, required: true },
@@ -23,30 +28,18 @@ const orderSchema = mongoose.Schema(
     shippingAddress: {
       address: { type: String, required: true },
       city: { type: String, required: true },
-      postalCode: { type: String, required: true },
+      commune: {
+        type: String,
+        required: true,
+        enum: ["Sbata", "Al Fida", "Anfa", "Ben M'sik", "Hay Hassani", "Hay Mohammadi", "Maârif", "Mers Sultan", "Moulay Rachid", "Essoukhour Assawda", "Ain Sebaa", "Sidi Belyout", "Sidi Bernoussi", "Sidi Moumen", "Sidi Othman"]
+      },
       phone: { type: String, required: true },
     },
     paymentMethod: {
       type: String,
       required: true,
     },
-    paymentResult: {
-      id: { type: String },
-      status: { type: String },
-      update_time: { type: String },
-      email_address: { type: String },
-    },
-    taxPrice: {
-      type: Number,
-      required: true,
-      default: 0.0,
-    },
-    shippingPrice: {
-      type: Number,
-      required: true,
-      default: 0.0,
-    },
-    totalPrice: {
+    Price: {
       type: Number,
       required: true,
       default: 0.0,

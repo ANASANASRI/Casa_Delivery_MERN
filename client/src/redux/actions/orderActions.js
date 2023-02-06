@@ -1,4 +1,4 @@
-import axios from 'axios'
+import http from "../../http-common";
 import { CREATE_ORDER_FAIL, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_HISTORY_FAIL, ORDER_HISTORY_REQUEST, ORDER_HISTORY_SUCCESS, PAYMENT_FAIL, PAYMENT_REQUEST, PAYMENT_SUCCESS } from './orderActionTypes'
 
 export const createOrder = (order)=> async(dispatch, getState)=> {
@@ -11,7 +11,7 @@ export const createOrder = (order)=> async(dispatch, getState)=> {
             'Content-type' : 'application/json',
             Authorization: `Bearer ${loggedInUser.token}`
         }
-        const {data} = await axios.post('/api/orders', order, {headers})
+        const {data} = await http.post('/orders', order, {headers})
         
         dispatch({type:CREATE_ORDER_SUCCESS, payload: data})
         
@@ -35,7 +35,7 @@ export const getOrderDetails = (orderId)=> async(dispatch, getState)=> {
             
             Authorization: `Bearer ${loggedInUser.token}`
         }
-        const {data} = await axios.get(`/api/orders/${orderId}`, {headers})
+        const {data} = await http.get(`/orders/${orderId}`, {headers})
         dispatch({type:ORDER_DETAILS_SUCCESS, payload: data})
         
     } catch (error) {
@@ -58,7 +58,7 @@ export const myOrderHistory = ()=> async(dispatch,getState)=> {
             
             Authorization: `Bearer ${loggedInUser.token}`
         }
-        const {data} = await axios.get(`/api/orders`, {headers})
+        const {data} = await http.get(`/orders`, {headers})
         dispatch({type:ORDER_HISTORY_SUCCESS, payload: data})
         
     } catch (error) {
@@ -82,7 +82,7 @@ export const makePayment = (orderId)=> async(dispatch,getState)=> {
             
             Authorization: `Bearer ${loggedInUser.token}`
         }
-        const {data} = await axios.put(`/api/orders/${orderId}`, {orderId: orderId} , {headers})
+        const {data} = await http.put(`/orders/${orderId}`, {orderId: orderId} , {headers})
         dispatch({type:PAYMENT_SUCCESS, payload: data})
         
     } catch (error) {

@@ -26,17 +26,17 @@ const Home = () => {
         <h1 className="text-center mb-3">Latest Food Items</h1>
         {loading ? <Loader/>
         : error ? <h4>{error}</h4> : 
-         <Row>
-         {items.map(item => 
-         
-             (<Col key={item._id} sm={12} md={6} lg={4} xl={3}>
-               
-               <ItemList  item={item}  />
-             </Col>)
-         )}
-       </Row>
-        }
-       
+        <Row>
+        {items.map(item => 
+        
+            (<Col key={item._id} sm={12} md={6} lg={4} xl={3}>
+              
+              <ItemList  item={item}  />
+            </Col>)
+        )}
+      </Row>
+      }
+      
         </>
     );
 };

@@ -1,10 +1,10 @@
 import { ITEM_DETAILS_FAIL, ITEM_DETAILS_REQUEST, ITEM_DETAILS_SUCCESS, ITEM_LIST_FAIL, ITEM_LIST_REQUEST, ITEM_LIST_SUCCESS } from './itemActionType'
-import axios from 'axios'
+import http from "../../http-common";
 
 const getItems = ()=> async(dispatch)=> {
     try {
         dispatch({type:ITEM_LIST_REQUEST})
-        const {data} = await axios.get('/api/products')
+        const {data} = await http.get('/products')
         // console.log('from item action: ',data)
         dispatch({type:ITEM_LIST_SUCCESS, payload: data})
         
@@ -20,7 +20,7 @@ const getItems = ()=> async(dispatch)=> {
 const getItemDetails = (id)=> async(dispatch)=> {
     try {
         dispatch({type:ITEM_DETAILS_REQUEST})
-        const {data} = await axios.get(`/api/products/${id}`)
+        const {data} = await http.get(`/products/${id}`)
         
         dispatch({type:ITEM_DETAILS_SUCCESS, payload: data})
         

@@ -29,18 +29,18 @@ export const cartReducers= (state=initialState, action)=> {
             }
         
         case SAVE_SHIPPING_ADDRESS:
-           
-            return {
-              ...state,
-              shippingAddress: { 
-                  address: action.payload.address, 
-                  city: action.payload.city, 
-                  postalCode: action.payload.postalCode,
-                  phone: action.payload.phone,
-              }
-            };
-    
-        default:
-           return state
-    }
+        
+        return {
+            ...state,
+            shippingAddress: { 
+                address: action.payload.address, 
+                city: action.payload.city, 
+                postalCode: action.payload.postalCode,
+                phone: action.payload.phone,
+            }
+        };
+
+    default:
+        return state
+}
 }

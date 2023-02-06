@@ -1,4 +1,4 @@
-import axios from "axios"
+import http from "../../http-common";
 import { LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_FAIL, REGISTER_REQUEST, REGISTER_SUCCESS } from "./userActionTypes"
 
 
@@ -6,12 +6,12 @@ export const login= (email, password) => async(dispatch)=> {
     try {
         dispatch({
             type: LOGIN_REQUEST,
- 
+
         })
         const headers= {
             "Content-type" : "application/json"
         }
-        const {data} = await axios.post('/api/user/login', {email, password}, headers)
+        const {data} = await http.post('/users/login', {email, password}, headers)
         localStorage.setItem('userInfo', JSON.stringify(data))
         dispatch({
             type: LOGIN_SUCCESS,
@@ -43,12 +43,12 @@ export const register= (name,email, password) => async(dispatch)=> {
     try {
         dispatch({
             type: REGISTER_REQUEST,
- 
+
         })
         const headers= {
             "Content-type" : "application/json"
         }
-        const {data} = await axios.post('/api/user', {name,email, password}, headers)
+        const {data} = await http.post('/users', {name,email, password}, headers)
         console.log(data)
         
         dispatch({

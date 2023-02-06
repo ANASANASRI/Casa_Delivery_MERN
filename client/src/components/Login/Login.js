@@ -18,7 +18,7 @@ import Loader from "../spinner/Loader";
 // Initialize Firebase
 
 const Login = () => {
-     initializeApp(firebaseConfig);
+    initializeApp(firebaseConfig);
   
   const [isNewUser, setUser] = useState(false);
   const [isError, setIsError] = useState({
@@ -57,7 +57,7 @@ useEffect(() => {
         auth.currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
           
           
-           localStorage.setItem("userInfo",{...userdetails, token:idToken});
+          localStorage.setItem("userInfo",{...userdetails, token:idToken});
           // setloggedInUser(userdetails);
         }).catch(function(error) {
           alert(error.message);
@@ -197,7 +197,7 @@ useEffect(() => {
               <strong> Sign in</strong>
             </Link>
           </p>
-             }
+          }
             
           </div>
             

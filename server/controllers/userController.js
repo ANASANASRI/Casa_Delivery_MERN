@@ -2,9 +2,6 @@ const User = require("../models/users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-
-///////////////////////////////////////////////////////////////////////////
-
 const userRegister = async (req, res) => {
 const { name, email, password } = req.body;
 
@@ -22,21 +19,16 @@ try {
     // Create the user
     const user = await User.create({ name, email, password: hashedPassword });
 
-    // Generate the JWT
-    const token = jwt.sign(
-    { id: user._id, email: user.email },
-    process.env.JWT_SECRET,
-    { expiresIn: "30d" }
-    );
-
-    // Return the user and the JWT
-    return res.json({
-    id: user._id,
-    name,
-    email,
-    isAdmin: user.isAdmin,
-    token,
-    });
+if (user) {
+    const token = jwt.sign({ id: user._id , email: user.email}, process.env.JWT_SECRET, {expiresIn: '30d'});
+    res.json({
+                    id: user._id,
+                    name,
+                    email,
+                    isAdmin: user.isAdmin,
+                    token : token
+                })
+}
 } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Failed to create user" });
@@ -44,7 +36,8 @@ try {
 };
 
 
-////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
 
 const userAuth = async (req, res) => {
 const { email, password } = req.body;
@@ -77,18 +70,18 @@ try {
 }
 };
 
-////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
 
 
 const getUser = async (req, res) => {
 const user = await User.findById(req.params.id);
 if (user) {
-res.json(user);
+    res.json(user);
 } else {
-res.status(404);
-throw new Error("user Not Found...");
+    res.status(404);
+    throw new Error("user Not Found...");
 }
 };
 
-
-module.exports = {userRegister,userAuth,getUser};
+module.exports = { userRegister, userAuth, getUser };

@@ -27,8 +27,17 @@ const PaymentMethod = () => {
               <Col>
                 <Form.Check
                   type="radio"
-                  label="PayPal or Credit Card"
+                  label="PayPal"
                   id="PayPal"
+                  name="paymentMethod"
+                  value={paymentMethod}
+                  checked
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                ></Form.Check>
+                <Form.Check
+                  type="radio"
+                  label="Espèce"
+                  id="Espèce"
                   name="paymentMethod"
                   value={paymentMethod}
                   checked

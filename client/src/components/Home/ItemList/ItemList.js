@@ -22,7 +22,7 @@ const ItemList = ({item}) => {
               <Rating rating={item.rating} review={item.numReviews}></Rating>
               </div>
             </Card.Text>
-            <Card.Text as="h3">{item.price}DH</Card.Text>
+            <Card.Text as="h3">{item.price} DH</Card.Text>
           </Card.Body>
         </Card>
       </>

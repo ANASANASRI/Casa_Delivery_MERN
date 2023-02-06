@@ -62,9 +62,9 @@ const history= useNavigate()
                     review={item.numReviews}
                   ></Rating>
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {item.price}DH</ListGroup.Item>
+                <ListGroup.Item>Price: {item.price} DH</ListGroup.Item>
                 <ListGroup.Item className='mb-4'>
-                  Description: ${item.description}
+                  Description: {item.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -75,7 +75,7 @@ const history= useNavigate()
                   <Row>
                     <Col>Price:</Col>
                     <Col>
-                      <strong> ${item.price}</strong>
+                      <strong> {item.price} DH</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

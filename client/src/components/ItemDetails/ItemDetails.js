@@ -33,7 +33,7 @@ const history= useNavigate()
     return (
       <>
         <Link className="btn btn-dark my-2" to="/">
-          Back
+          Retour
         </Link>
         {loading ? (
           <Loader />
@@ -53,7 +53,7 @@ const history= useNavigate()
 
             <Col md={3} className="itemdetails-title">
               <ListGroup variant="flush">
-                <ListGroup.Item variant="info">
+                <ListGroup.Item variant="info" className="coll">
                   <h4>{item.name}</h4>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -62,7 +62,7 @@ const history= useNavigate()
                     review={item.numReviews}
                   ></Rating>
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {item.price} DH</ListGroup.Item>
+                <ListGroup.Item>Prix: {item.price} DH</ListGroup.Item>
                 <ListGroup.Item className='mb-4'>
                   Description: {item.description}
                 </ListGroup.Item>
@@ -73,7 +73,7 @@ const history= useNavigate()
               <ListGroup>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price:</Col>
+                    <Col>Prix:</Col>
                     <Col>
                       <strong> {item.price} DH</strong>
                     </Col>
@@ -82,7 +82,7 @@ const history= useNavigate()
 
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Statut:</Col>
                     <Col>
                       {item.countInStock === 0 ?  <p style={{color:'red'}}>Out of stock</p> : `In Stock(${item.countInStock})`}
                     </Col>
@@ -118,7 +118,7 @@ const history= useNavigate()
                     disabled={item.countInStock === 0}
                     onClick={handleAddToCart}
                   >
-                    Add To Cart
+                    Ajouter au panier
                   </Button>
                 </ListGroup.Item>
               </ListGroup>

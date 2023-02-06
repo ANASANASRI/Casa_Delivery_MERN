@@ -153,7 +153,7 @@ useEffect(() => {
                     type="text"
                     name="name"
                     required
-                    placeholder="Your Name"
+                    placeholder="Votre nom"
                   />
                 </label>
               )}
@@ -163,7 +163,7 @@ useEffect(() => {
                   <span></span>
                 ) : (
                   <span className="error-msg" style={{ color: "red" }}>
-                    Please enter valid email address
+                    Veuillez saisir une adresse e-mail valide
                   </span>
                 )}
               </label>
@@ -172,7 +172,7 @@ useEffect(() => {
                   type="password"
                   name="password"
                   required
-                  placeholder="Password"
+                  placeholder="Mot de passe"
                 />
               </label>
               <button type="submit" className="formbutton">
@@ -186,15 +186,16 @@ useEffect(() => {
 
             {!isNewUser ? 
             <p className="text-center">
-              New User?
+              Nouvel utilisateur?
+
               <Link onClick={handleNewUser} to='/login?redirect=register'>
                 <strong> Register</strong>
               </Link>
             </p> :
             <p className="text-center">
-            Already have an account?
+            Vous avez déjà un compte?
             <Link onClick={handleNewUser} to="/login">
-              <strong> Sign in</strong>
+              <strong> S'identifier</strong>
             </Link>
           </p>
           }
@@ -215,14 +216,14 @@ useEffect(() => {
                 className="button"
                 onClick={googleLogin}
               >
-                Sign In with Google
+                Se connecter avec Google
               </p>
             </div>
             
             <div className="content__footer">
               <p>
-                By clicking "Sign up" button above you agree to our
-                <strong> terms of use</strong>
+                En cliquant sur le bouton "S'inscrire" ci-dessus, vous acceptez notre
+                <strong>conditions d'utilisation</strong>
               </p>
             </div>
           </div>

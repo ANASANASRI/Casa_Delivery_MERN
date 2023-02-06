@@ -59,9 +59,9 @@ const ConfirmOrder = () => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>Expédition</h2>
               <p>
-                <strong>Address: </strong>
+                <strong>adresse: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
                 {cart.shippingAddress.postalCode},{' '}
                 {cart.shippingAddress.phone}
@@ -69,15 +69,15 @@ const ConfirmOrder = () => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <h2>Mode de paiement</h2>
+              <strong>Methode: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Items commandés</h2>
               {cart.cartItems.length === 0 ? (
-                <h4>Your cart is empty</h4>
+                <h4>Votre panier est vide</h4>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
@@ -111,17 +111,17 @@ const ConfirmOrder = () => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h3>Order Summary</h3>
+                <h3>Récapitulatif de la commande</h3>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>articles</Col>
                   <Col>${cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col>Expédition</Col>
                   <Col>${cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -133,7 +133,7 @@ const ConfirmOrder = () => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Totale</Col>
                   <Col>${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -147,7 +147,7 @@ const ConfirmOrder = () => {
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  Passer la commande
                 </Button>
               </ListGroup.Item>
             </ListGroup>

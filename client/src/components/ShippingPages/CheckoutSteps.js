@@ -15,15 +15,13 @@ const CheckoutSteps = ({step1,step2, step3}) => {
                 {step1? 
                 <Nav.Link className='checkout-item ' >
                 <div className="step active-bar">
-                Shipping Address
-
+                adresse de livraison
                 </div>
               
             </Nav.Link>
             : <Nav.Link disabled className='checkout-item ' >
             <div className="step incomplete">
-            Shipping Address
-
+            adresse de livraison
             </div>
           
         </Nav.Link>
@@ -39,15 +37,13 @@ const CheckoutSteps = ({step1,step2, step3}) => {
                 {step2? 
                 <Nav.Link className='checkout-item ' >
                 <div className="step active-bar">
-                Payment Method
-
+                Mode de paiement
                 </div>
               
             </Nav.Link>
             : <Nav.Link disabled className='checkout-item ' >
             <div className="step incomplete">
-            Payment Method
-
+            Mode de paiement
             </div>
           
         </Nav.Link>
@@ -62,15 +58,13 @@ const CheckoutSteps = ({step1,step2, step3}) => {
                 {step3? 
                 <Nav.Link className='checkout-item ' >
                 <div className="step active-bar">
-                Confirm Order
-
+                Confirmer la commande
                 </div>
               
             </Nav.Link>
             : <Nav.Link disabled className='checkout-item ' >
             <div className="step incomplete">
-            Confirm Order
-
+            Confirmer la commande
             </div>
           
         </Nav.Link>

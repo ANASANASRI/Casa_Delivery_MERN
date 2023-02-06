@@ -34,9 +34,9 @@ const CartPage = () => {
       <Row>
           
         <Col md={8}>
-        <h4>Shopping Cart</h4>
+        <h4>Panier</h4>
           {cartItems.length === 0 ? (
-            <h6 style={{color: 'chocolate'}}>Your cart is empty! Add some food first..</h6>
+            <h6 style={{color: 'chocolate'}}>Votre panier est vide! Ajoutez d'abord de la nourriture..</h6>
           ) : (
             <ListGroup variant="flush">
               {cartItems.map((item) => (
@@ -80,12 +80,12 @@ const CartPage = () => {
             <Card>
                 <ListGroup variant="flush">
                     <ListGroup.Item>
-                        <h2>subtotal ({cartItems.reduce((initial, item)=>initial+item.quantity,0)}) items</h2>
-                        Total : ${cartItems.reduce((initial, item)=>initial+item.quantity*item.price,0)}
+                        <h2>total ({cartItems.reduce((initial, item)=>initial+item.quantity,0)}) articles</h2>
+                        Total : {cartItems.reduce((initial, item)=>initial+item.quantity*item.price,0)} DH
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Button className='btn-block' type='button' disabled={cartItems.length===0} onClick={checkOutHandler}>
-                            Proceed To Checkout
+                            Passer à la caisse
 
                         </Button>
                     </ListGroup.Item>

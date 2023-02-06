@@ -8,8 +8,20 @@
     border-radius: 3px;
     height: 40px;
 }
+
+.btn{
+    background-color: #f44747;
+    border-color: #FCC45E;
+}
+
+
+.coll{
+    background-color: #f44747df;
+    color: #FCC45E;
+}
+
 .quantity-input:focus {
-    background: red;
+    background: #F44748;
 }
 .quantity-input__modifier, .quantity-input__screen {
     user-select: none;

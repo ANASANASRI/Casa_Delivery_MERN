@@ -1,6 +1,11 @@
 const mongoose=require("mongoose") 
 
 const livreurUserSchema= mongoose.Schema( {
+      user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'users',
+    },
   commune: {
     type: String,
     required: true,

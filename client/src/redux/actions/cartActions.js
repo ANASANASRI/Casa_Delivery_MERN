@@ -1,5 +1,5 @@
-import { ITEM_ADD_TO_CART, ITEM_REMOVE_FROM_CART, SAVE_SHIPPING_ADDRESS } from "./cartActionTypes"
 import http from "../../http-common";
+import { ITEM_ADD_TO_CART, ITEM_REMOVE_FROM_CART, SAVE_SHIPPING_ADDRESS } from "./cartActionTypes"
 
 
 export const addToCart= (id, quantity) => async(dispatch, getState) => {
@@ -25,8 +25,6 @@ const {data} = await http.get(`/products/${id}`)
 
 }
 
-/// remove from the cart
-
 export const removeFromCart= (id) => async(dispatch, getState) => {
 
 
@@ -34,8 +32,6 @@ export const removeFromCart= (id) => async(dispatch, getState) => {
             type: ITEM_REMOVE_FROM_CART, 
             payload: { 
                 id: id
-                
-
             } 
             });
 

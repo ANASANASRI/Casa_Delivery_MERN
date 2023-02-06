@@ -5,6 +5,8 @@ const cors=require("cors");
 const userRoutes=require("./routes/userRoutes.js")
 const productRoutes=require("./routes/productRoutes.js")
 const orderRoutes=require("./routes/orderRoutes.js")
+const restauRoutes=require("./routes/restauRoutes.js")
+const livreurRoutes=require("./routes/livreurRoutes.js")
 
 require('dotenv').config()
 
@@ -18,6 +20,8 @@ mongoose.connect(process.env.dbURL)
 app.use("/users",userRoutes)
 app.use("/orders",orderRoutes)
 app.use("/products",productRoutes)
+app.use("/livreurs",livreurRoutes)
+app.use("/restau",restauRoutes)
 
 app.get("/",(req,res)=>{
     console.log("Home Page")

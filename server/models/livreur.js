@@ -16,7 +16,6 @@ createdAt: { type: Date, default: Date.now },
 expireAt: {
                 type: Date,
                  default: Date.now() + 24*60 * 60 * 1000  
-
             }
 }
 );
@@ -24,8 +23,6 @@ expireAt: {
 
 
 const livreur =mongoose.model('livreur',livreurUserSchema)
-
-
 
 
 module.exports = livreur ;

@@ -41,32 +41,32 @@ const MakePayment = () => {
         <ListGroup variant='flush'>
           <ListGroup.Item>
             
-          <div className="shipping-heading">
-            <Col sm={4} style={{paddingLeft:'0px'}}>
-            <h2>Expédition</h2>
-            </Col>
-            <Col sm={4}>
-            {order.isDelivered ? (
-            <p variant='success'>
-              Délivré le {order.deliveredAt}
-            </p>
-          ) : (
+           <div className="shipping-heading">
+             <Col sm={4} style={{paddingLeft:'0px'}}>
+             <h2>Shipping</h2>
+             </Col>
+             <Col sm={4}>
+             {order.isDelivered ? (
+              <p variant='success'>
+                Delivered on {order.deliveredAt}
+              </p>
+            ) : (
               <div style={{marinBottom: '0px'}} className="alert alert-danger" role="alert">
-  Non livrés!
+  Not Delivered!
 </div>
             )}
 
              </Col>
            </div>
             <p>
-              <strong>Nom: </strong> {order.user.name}
+              <strong>Name: </strong> {order.user.name}
             </p>
             <p>
               <strong>Email: </strong>{' '}
               <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
             </p>
             <p>
-              <strong>Adresse:</strong>
+              <strong>Address:</strong>
               {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
               {order.shippingAddress.postalCode},{' '}
               {order.shippingAddress.phone}
@@ -78,14 +78,14 @@ const MakePayment = () => {
             
           <div className="shipping-heading">
              <Col sm={4} style={{paddingLeft:'0px'}}>
-             <h2>Paiement</h2>
+             <h2>Payment</h2>
              </Col>
              <Col sm={8}>
              {order.isPaid ? (
               
               <div style={{marinBottom: '0px'}} className="alert alert-success" role="alert">
               
-                Payé le{' '} 
+                Paid On{' '} 
                 <Moment format="DD-MM-YYYY HH:mm A">
                 {order.updatedAt}
                 </Moment>
@@ -103,16 +103,16 @@ const MakePayment = () => {
 
 
             <p>
-              <strong>Methode: </strong>
+              <strong>Method: </strong>
               {order.paymentMethod}
             </p>
            
           </ListGroup.Item>
 
           <ListGroup.Item>
-            <h2>Items commandés</h2>
+            <h2>Order Items</h2>
             {order.orderItems.length === 0 ? (
-              <h4>La commande est vide</h4>
+              <h4>Order is empty</h4>
             ) : (
               <ListGroup variant='flush'>
                 {order.orderItems.map((item, index) => (
@@ -146,7 +146,7 @@ const MakePayment = () => {
         <Card className="mt-3 mb-5">
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Récapitulatif de la commande</h2>
+              <h2>Order Summary</h2>
             </ListGroup.Item>
             <ListGroup.Item>
               <Row>
@@ -156,19 +156,19 @@ const MakePayment = () => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Row>
-                <Col>Expédition</Col>
+                <Col>Shipping</Col>
                 <Col>${order.shippingPrice}</Col>
               </Row>
             </ListGroup.Item>
             <ListGroup.Item>
               <Row>
-                <Col>impôt</Col>
+                <Col>Tax</Col>
                 <Col>${order.taxPrice}</Col>
               </Row>
             </ListGroup.Item>
             <ListGroup.Item>
               <Row>
-                <Col>Totale</Col>
+                <Col>Total</Col>
                 <Col>${order.totalPrice}</Col>
               </Row>
             </ListGroup.Item>
@@ -181,7 +181,7 @@ const MakePayment = () => {
                     onClick={()=>handlePayment(order._id)}
                     
                   >
-                    Payez maintenant
+                    Pay Now
                   </Button>
                 </ListGroup.Item>}
               

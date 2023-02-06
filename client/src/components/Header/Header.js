@@ -44,17 +44,17 @@ const Header = () => {
               {userInfo ? <NavDropdown title={userInfo.name} id="username">
                 
               <Link to="/orderhistory">
-                <i>Historique des commandes</i>
+                <i>Order History</i>
               </Link>
 
                 <NavDropdown.Item onClick={logoutHandler}>
-                  Se déconnecter
+                  Logout
                 </NavDropdown.Item>
 
               </NavDropdown> :
               
                 <Link to="/login">
-                  <FontAwesomeIcon icon={faUser} className="fas"/><h7 className="fass">S'identifier</h7>
+                  <FontAwesomeIcon icon={faUser} className="fas"/><h7 className="fass">Sign In</h7>
                 </Link>
               }
               

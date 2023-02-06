@@ -33,7 +33,7 @@ const history= useNavigate()
     return (
       <>
         <Link className="btn btn-dark my-2" to="/">
-          Retour
+          Back
         </Link>
         {loading ? (
           <Loader />
@@ -62,7 +62,7 @@ const history= useNavigate()
                     review={item.numReviews}
                   ></Rating>
                 </ListGroup.Item>
-                <ListGroup.Item>Prix: {item.price} DH</ListGroup.Item>
+                <ListGroup.Item>Price: {item.price} DH</ListGroup.Item>
                 <ListGroup.Item className='mb-4'>
                   Description: {item.description}
                 </ListGroup.Item>
@@ -73,7 +73,7 @@ const history= useNavigate()
               <ListGroup>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Prix:</Col>
+                    <Col>Price:</Col>
                     <Col>
                       <strong> {item.price} DH</strong>
                     </Col>
@@ -82,7 +82,7 @@ const history= useNavigate()
 
                 <ListGroup.Item>
                   <Row>
-                    <Col>Statut:</Col>
+                    <Col>Status:</Col>
                     <Col>
                       {item.countInStock === 0 ?  <p style={{color:'red'}}>Out of stock</p> : `In Stock(${item.countInStock})`}
                     </Col>
@@ -118,7 +118,7 @@ const history= useNavigate()
                     disabled={item.countInStock === 0}
                     onClick={handleAddToCart}
                   >
-                    Ajouter au panier
+                    Add To Cart
                   </Button>
                 </ListGroup.Item>
               </ListGroup>

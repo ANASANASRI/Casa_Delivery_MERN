@@ -27,7 +27,7 @@ const HomeHeader = () => {
 
                         <div className="search-food d-flex">
                             <input type="text" placeholder="Chercher votre plat..."/>
-                            <Link to="#" className="search-btn">Chercher</Link>
+                            <Link to="./chercherPLat" className="search-btn">Chercher</Link>
                         </div>
                         <div className="social-icons d-flex">
                             <a href="https://github.com/ANASANASRI" target="_blank" rel="noreferrer noopener"> <img src={github} alt="facebook"/></a>

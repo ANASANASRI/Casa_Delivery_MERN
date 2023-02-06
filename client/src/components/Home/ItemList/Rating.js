@@ -1,67 +1,68 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Rating = ({rating, review, color}) => {
     return (
       <>
         
         <span>
-          <i style={{color}}
-            className={
+          <FontAwesomeIcon style={{color}}
+            icon={
               rating >= 1
-                ? `fas fa-star`
+                ? faStar
                 : rating >= 0.5
-                ? `fas fa-star-half-alt`
+                ? faStarHalfAlt
                 : `far fa-star`
             }
-          ></i>
+          />
         </span>
 
         <span>
-          <i style={{color}}
-            className={
+          <FontAwesomeIcon style={{color}}
+            icon={
               rating >= 2
-                ? `fas fa-star`
+                ? faStar
                 : rating >= 1.5
-                ? `fas fa-star-half-alt`
+                ? faStarHalfAlt
                 : `far fa-star`
             }
-          ></i>
+          />
         </span>
         <span>
-          <i style={{color}}
-            className={
+          <FontAwesomeIcon style={{color}}
+            icon={
               rating >= 3
-                ? `fas fa-star`
+                ? faStar
                 : rating >= 2.5
-                ? `fas fa-star-half-alt`
+                ? faStarHalfAlt
                 : `far fa-star`
             }
-          ></i>
+          />
         </span>
         <span>
-          <i style={{color}}
-            className={
+          <FontAwesomeIcon style={{color}}
+            icon={
               rating >= 4
-                ? `fas fa-star`
+                ? faStar
                 : rating >= 3.5
-                ? `fas fa-star-half-alt`
+                ? faStarHalfAlt
                 : `far fa-star`
             }
-          ></i>
+          />
         </span>
 
         <span>
-          <i style={{color}}
-            className={
+          <FontAwesomeIcon style={{color}}
+            icon={
               rating >= 5
-                ? `fas fa-star`
+                ? faStar
                 : rating >= 4.5
-                ? `fas fa-star-half-alt`
+                ? faStarHalfAlt
                 : `far fa-star`
             }
-          ></i>
+          />
           <strong> {review} Reviews</strong>
         </span>
         

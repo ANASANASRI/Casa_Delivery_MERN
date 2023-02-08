@@ -25,7 +25,7 @@ const Login = () => {
     emailError: false,
     password: false,
   });
-  const history = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const dispatch= useDispatch()
@@ -34,10 +34,10 @@ const Login = () => {
   const {userInfo, loading, error} = userdetails
 
 useEffect(() => {
-  userInfo && history.push('/')
+  userInfo && navigate('/')
 
 
-},[history,from,userInfo])
+},[navigate,from,userInfo])
   // google login
   function googleLogin() {
     const provider = new GoogleAuthProvider();
@@ -63,7 +63,7 @@ useEffect(() => {
           alert(error.message);
         });
 
-        history.replace(from);
+        navigate.replace(from);
         console.log(userdetails)
         
       })
@@ -103,7 +103,7 @@ useEffect(() => {
 
         // dispatch user register reducer
         await dispatch(register(displayName, email, password))
-        history.push('/');
+        navigate('/');
 
         
       } else {
@@ -117,7 +117,7 @@ useEffect(() => {
       
       if (userInfo) {
         
-        history.push('/');
+        navigate('/');
       }
 
 
@@ -234,183 +234,3 @@ useEffect(() => {
 };
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useDispatch, useSelector } from "react-redux";
-import { login, register } from "../../redux/actions/userActions";
-import Loader from "../spinner/Loader";
-
-const Login = () => {
-  const [isNewUser, setUser] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    name: "",
-  });
-  const [isError, setIsError] = useState({
-    emailError: false,
-    password: false,
-  });
-  const history = useNavigate();
-  const location = useLocation();
-  const { from } = location.state || { from: { pathname: "/" } };
-  const dispatch = useDispatch();
-  const { loading, user } = useSelector((state) => state.user);
-
-  useEffect(() => {
-    if (user) {
-      history.push(from);
-    }
-  }, [user, history, from]);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.email) {
-      setIsError({ ...isError, emailError: true });
-      return;
-    }
-
-    if (!formData.password) {
-      setIsError({ ...isError, passwordError: true });
-      return;
-    }
-
-    if (isNewUser) {
-      if (!formData.name) {
-        setIsError({ ...isError, nameError: true });
-        return;
-      }
-      dispatch(register({ name: formData.name, email: formData.email, password: formData.password }));
-    } else {
-      dispatch(login({ email: formData.email, password: formData.password }));
-    }
-  };
-
- return (
-    <div className="container mt-5">
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className="row">
-          <div className="col-md-6 offset-md-3">
-            <form onSubmit={handleSubmit}>
-              {isNewUser && (
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Name"
-                    name="name"
-                    onChange={handleChange}
-                  />
-                  {isError.nameError && (
-                    <small className="form-text text-danger">Name is required</small>
-                  )}
-                </div>
-              )}
-              <div className="form-group">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Email"
-                  name="email"
-                  onChange={handleChange}
-                />
-                {isError.emailError === false ? (
-                  <span></span>
-                ) : (
-                  <span className="error-msg" style={{ color: "red" }}>
-                    Please enter valid email address
-                  </span>
-                )}
-              </label>
-              <label htmlFor="password">
-                <input
-                  type="password"
-                  name="password"
-                  required
-                  placeholder="Password"
-                />
-              </label>
-              <button type="submit" className="formbutton">
-                {isNewUser ? `Sign Up` : `Sign In`}
-              </button>
-            </form>
-
-            <div>
-          <div className="d-flex justify-content-center"><div className="content__submit--line"></div></div>
-            
-
-            {!isNewUser ? 
-            <p className="text-center">
-              New User?
-              <Link onClick={handleNewUser} to='/login?redirect=register'>
-                <strong> Register</strong>
-              </Link>
-            </p> :
-            <p className="text-center">
-            Already have an account?
-            <Link onClick={handleNewUser} to="/login">
-              <strong> Sign in</strong>
-            </Link>
-          </p>
-          }
-            
-          </div>
-          </div>
-
-          <div className="col-md-6 content__submit">
-            
-            <div style={{ cursor: "pointer" }} className="button google-button">
-              <div className="button google-button__google-icon"></div>
-              <p
-                style={{ display: "contents" }}
-                className="button"
-                onClick={googleLogin}
-              >
-                Sign In with Google
-              </p>
-            </div>
-            
-            <div className="content__footer">
-              <p>
-                By clicking "Sign up" button above you agree to our
-                <strong> terms of use</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-    </div> 
-}
-    </>
-  );
-};
-
-export default Login; */

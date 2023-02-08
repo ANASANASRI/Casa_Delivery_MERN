@@ -14,19 +14,18 @@ const Shipping = () => {
     const [city, setCity] = useState(shippingAddress.city)
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
     const [phone, setPhone] = useState(shippingAddress.phone)
-    const history= useNavigate()
+    const navigate= useNavigate()
   
     const submitHandler = (e)=>{
         e.preventDefault()
         dispatch(AddShippingAddress( address, city, postalCode, phone ))
-        history.push('/payment')
+        navigate('/payment')
     }
     return (
         <Container>
             <div className="steps">
             <CheckoutSteps step1></CheckoutSteps>
             </div>
-           
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
             <h2>Your Shipping Address</h2>

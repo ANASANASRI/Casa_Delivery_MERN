@@ -25,9 +25,9 @@ const ItemDetails = () => {
 
 
   },[dispatch, id])
-const history= useNavigate()
+const navigate = useNavigate()
   const handleAddToCart=()=>{
-    history.push(`/Cart/${id}?qty=${quantity}`)
+    navigate(`/cart/${id}?qty=${quantity}`)
   }
     
     return (

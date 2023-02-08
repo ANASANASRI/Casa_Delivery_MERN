@@ -27,7 +27,7 @@ function App(){
                   <Route path="/Confirm" element={ <ConfirmOrder/> }/>
                   <Route path="/order/:id" element={ <MakePayment/> }/>
                   <Route path="/orderhistory" element={ <OrderHistory/> }/>
-                  <Route path="/CartPage" element={ <CartPage/> }/>
+                  <Route path="/cart/:id?" element={ <CartPage/> }/>
                   <Route path="/Privat" element={ <PrivateRoute/> }/>
                   <Route path="/" element={ <Home/> }/>
                   </Routes>

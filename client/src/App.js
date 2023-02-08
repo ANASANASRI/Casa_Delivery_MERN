@@ -12,6 +12,7 @@ import PaymentMethod from './components/ShippingPages/PaymentMethod';
 import ConfirmOrder from './components/ShippingPages/ConfirmOrder';
 import MakePayment from './components/ShippingPages/MakePayment';
 import OrderHistory from './components/OrderHistory/OrderHistory';
+import Livreur from './components/Livreur/Livreur';
 
 function App(){
   return (
@@ -22,6 +23,7 @@ function App(){
                   <Routes>
                   <Route path="/item/:id" element={ <ItemDetails/> }/>
                   <Route path="/login" element={ <Login/> }/>
+                  <Route path="/livreur" element={ <Livreur/> }/>
                   <Route path="Shipping" element={ <Shipping/> }/>
                   <Route path="/payment" element={ <PaymentMethod/> }/>
                   <Route path="/Confirm" element={ <ConfirmOrder/> }/>

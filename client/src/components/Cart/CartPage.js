@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import ItemList from '../Home/ItemList/ItemList';
 
 const CartPage = () => {
     const location = useLocation()
@@ -35,9 +36,9 @@ const CartPage = () => {
       <Row>
           
         <Col md={8}>
-        <h4>Shopping Cart</h4>
+        <h4>Panier</h4>
           {cartItems.length === 0 ? (
-            <h6 style={{color: 'chocolate'}}>Your cart is empty! Add some food first..</h6>
+            <h6 style={{color: 'chocolate'}}>Votre panier est vide! Ajoutez d'abord de la nourriture...</h6>
           ) : (
             <ListGroup variant="flush">
               {cartItems.map((item) => (
@@ -49,7 +50,7 @@ const CartPage = () => {
                     <Col md={3}>
                       <Link to={`/item/${item.id}`}>{item.name}</Link>
                     </Col>
-                    <Col md={2}>${item.price}</Col>
+                    <Col md={2}>{item.price} DH</Col>
                     <Col md={2}>
                         <Form.Control  className="quantity-select"
                         as='select'
@@ -58,7 +59,7 @@ const CartPage = () => {
                         >
                         {[...Array(item.countInStock).keys()].map((count)=>(
                             <option key={count+1} value={count+1}>
-                              { count+1}
+                              {count+item.quantity}
                             </option>
                         ))}
 
@@ -85,7 +86,7 @@ const CartPage = () => {
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Button className='btn-block' type='button' disabled={cartItems.length===0} onClick={checkOutHandler}>
-                            Proceed To Checkout
+                            Passer à la caisse
                         </Button>
                     </ListGroup.Item>
 

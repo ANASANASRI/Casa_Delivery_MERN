@@ -38,23 +38,23 @@ const Header = () => {
               <Nav className="ml-auto" >
                 
                 <Link to="/cart">
-                    <FontAwesomeIcon icon={faShoppingCart} className="fas"/><h7 className="fass">Cart</h7>
+                    <FontAwesomeIcon icon={faShoppingCart} className="fas"/><h7 className="fass">panier</h7>
                 </Link>
 
               {userInfo ? <NavDropdown title={userInfo.name} id="username">
                 
               <Link to="/orderhistory">
-                <i>Order History</i>
+                <i>Historique des commandes</i>
               </Link>
 
                 <NavDropdown.Item onClick={logoutHandler}>
-                  Logout
+                  Se déconnecter
                 </NavDropdown.Item>
 
               </NavDropdown> :
               
                 <Link to="/login">
-                  <FontAwesomeIcon icon={faUser} className="fas"/><h7 className="fass">Sign In</h7>
+                  <FontAwesomeIcon icon={faUser} className="fas"/><h7 className="fass">S'Authentifier</h7>
                 </Link>
               }
               

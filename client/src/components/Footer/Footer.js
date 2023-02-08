@@ -9,7 +9,7 @@ const Footer = () => {
     return (
       <footer>
         <p className="footer-heart text-center">
-          by{" "}
+          par{" "}
           <a href="https://www.linkedin.com/in/anasanasri/">Anas ANASRI</a>
         </p>
         <div className="social-icons d-flex justify-content-center">

@@ -19,7 +19,7 @@ const OrderHistory = () => {
       <>
         <Row className='justify-content-center'>
           <Col s={11} md={12} lg={8} className=''>
-            <h2>Order History</h2>
+            <h2>Historique des commandes</h2>
             {loading ? (
               <Loader />
             ) : error ? (
@@ -30,10 +30,10 @@ const OrderHistory = () => {
                   <tr style={{color: 'white'}}>
                     <th>ID</th>
                     <th>DATE</th>
-                    <th>TOTAL</th>
-                    <th>PAID</th>
-                    <th>DELIVERED</th>
-                    <th>Details</th>
+                    <th>TOTALE</th>
+                    <th>PAYÉ</th>
+                    <th>LIVRÉ</th>
+                    <th>Détails</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@ const OrderHistory = () => {
                       <td>
                         <LinkContainer to={`/order/${order._id}`}>
                           <Button className="btn-sm" variant="light">
-                            View
+                            Voir
                           </Button>
                         </LinkContainer>
                       </td>

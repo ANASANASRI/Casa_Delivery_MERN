@@ -28,12 +28,12 @@ const Shipping = () => {
             </div>
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
-            <h2>Your Shipping Address</h2>
+            <h2>Votre adresse de livraison</h2>
 
 
         <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label>Adresse</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter address'
@@ -44,7 +44,7 @@ const Shipping = () => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label>Commune</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter city'
@@ -55,7 +55,7 @@ const Shipping = () => {
         </Form.Group>
 
         <Form.Group controlId='postalCode'>
-          <Form.Label>Postal Code</Form.Label>
+          <Form.Label>Code Postal</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter postal code'
@@ -66,7 +66,7 @@ const Shipping = () => {
         </Form.Group>
 
         <Form.Group controlId='country'>
-          <Form.Label>Phone No.</Form.Label>
+          <Form.Label>Num de telephone</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter Phone No'
@@ -77,7 +77,7 @@ const Shipping = () => {
         </Form.Group>
 
         <Button className='mt-3 btn-block butnn' type='submit' variant='primary'>
-          Continue
+          Continuer
         </Button>
       </Form>
         </Col>

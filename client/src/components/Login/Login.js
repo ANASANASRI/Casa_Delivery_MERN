@@ -163,7 +163,7 @@ useEffect(() => {
                   <span></span>
                 ) : (
                   <span className="error-msg" style={{ color: "red" }}>
-                    Please enter valid email address
+                    Veuillez saisir une adresse e-mail valide
                   </span>
                 )}
               </label>
@@ -192,9 +192,9 @@ useEffect(() => {
               </Link>
             </p> :
             <p className="text-center">
-            Already have an account?
+            Vous avez déjà un compte?
             <Link onClick={handleNewUser} to="/login">
-              <strong> Sign in</strong>
+              <strong> S'Authentifier </strong>
             </Link>
           </p>
           }
@@ -215,14 +215,14 @@ useEffect(() => {
                 className="button"
                 onClick={googleLogin}
               >
-                Sign In with Google
+                S'Authentifier avec google
               </p>
             </div>
             
             <div className="content__footer">
               <p>
-                By clicking "Sign up" button above you agree to our
-                <strong> terms of use</strong>
+                En cliquant sur le bouton "S'inscrire" ci-dessus, vous acceptez notre
+                <strong>conditions d'utilisation</strong>
               </p>
             </div>
           </div>

@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <>
         <HomeHeader></HomeHeader>
-        <h1 className="text-center mb-3">shoose Your food</h1>
+        <h1 className="text-center mb-3">choisissez votre plat</h1>
         {loading ? <Loader/>
         : error ? <h4>{error}</h4> : 
         <Row>

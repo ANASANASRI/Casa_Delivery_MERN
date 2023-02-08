@@ -19,11 +19,11 @@ const PaymentMethod = () => {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <Row className="justify-content-md-center">
         <Col xs={12} md={6}>
-          <h3>Payment Method</h3>
+          <h3>mode de paiement</h3>
 
           <Form onSubmit={submitHandler}>
             <Form.Group>
-              <Form.Label as="legend">Select Method</Form.Label>
+              <Form.Label as="legend">Sélectionnez la méthode</Form.Label>
               <Col>
                 <Form.Check
                   type="radio"
@@ -47,7 +47,7 @@ const PaymentMethod = () => {
             </Form.Group>
 
             <Button className="mt-3" type="submit" variant="primary">
-              Continue
+              Continuer
             </Button>
           </Form>
         </Col>

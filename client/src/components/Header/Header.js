@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
-import headercsr from "./headerCss.css";
+import "./headerCss.css";
 import { logout } from '../../redux/actions/userActions';
 import logo from '../../images/logo.png';
 
@@ -37,7 +37,7 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
                 
-                <Link to="/CartPage">
+                <Link to="/cart">
                     <FontAwesomeIcon icon={faShoppingCart} className="fas"/><h7 className="fass">Cart</h7>
                 </Link>
 

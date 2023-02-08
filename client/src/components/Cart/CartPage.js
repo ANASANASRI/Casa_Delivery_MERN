@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const CartPage = () => {
     const location = useLocation()
-    const history= useNavigate()
+    const navigate= useNavigate()
     const {id} = useParams()
     const qty= location.search ? Number(location.search.split('=')[1]) : 1
     const dispatch = useDispatch()
@@ -18,7 +20,6 @@ const CartPage = () => {
 
     if (location.search) {
       dispatch(addToCart(id, qty))
-      
     }
   },[dispatch, qty, id, location.search])
 
@@ -27,7 +28,7 @@ const CartPage = () => {
       dispatch(removeFromCart(id))
   }
   const checkOutHandler=()=>{
-      history.push('/shipping')
+      navigate('/shipping')
 
   }
     return (
@@ -65,8 +66,7 @@ const CartPage = () => {
                     </Col>
                     <Col md={2} className="cartpage-remove-btn">
                         <Button className='remove-icon' type='button' variant='light' onClick={()=>removeCartItem(item.id)}>
-                            <i className='remove-icon fas fa-trash'></i>
-
+                            <FontAwesomeIcon icon={faTrash}/>
                         </Button>
                     </Col>
                   </Row>
@@ -81,12 +81,11 @@ const CartPage = () => {
                 <ListGroup variant="flush">
                     <ListGroup.Item>
                         <h2>subtotal ({cartItems.reduce((initial, item)=>initial+item.quantity,0)}) items</h2>
-                        Total : ${cartItems.reduce((initial, item)=>initial+item.quantity*item.price,0)}
+                        Total : {cartItems.reduce((initial, item)=>initial+item.quantity*item.price,0)} DH
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Button className='btn-block' type='button' disabled={cartItems.length===0} onClick={checkOutHandler}>
                             Proceed To Checkout
-
                         </Button>
                     </ListGroup.Item>
 

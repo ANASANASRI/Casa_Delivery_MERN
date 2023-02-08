@@ -10,7 +10,7 @@ import { CREATE_ORDER_RESET } from '../../redux/actions/orderActionTypes';
 
 const ConfirmOrder = () => {
   const dispatch = useDispatch()
-  const history = useNavigate()
+  const navigate = useNavigate()
 
   const order= useSelector(state => state.order)
   const {success,  orderDetails}= order
@@ -18,10 +18,10 @@ const ConfirmOrder = () => {
   const cart = useSelector((state) => state.cart)
   cart.paymentMethod= 'PayPal'
   if (!cart.shippingAddress.address) {
-    history.push('/shipping')
+    navigate('/shipping')
   } 
   else if (!cart.paymentMethod) {
-    history.push('/payment')
+    navigate('/payment')
   }
 
   /// item price and tax
@@ -32,7 +32,7 @@ const ConfirmOrder = () => {
   
   useEffect(()=>{
     if (success) {
-      history.push(`/order/${orderDetails._id}`)
+      navigate(`/order/${orderDetails._id}`)
       dispatch({type: CREATE_ORDER_RESET})
     }
   })

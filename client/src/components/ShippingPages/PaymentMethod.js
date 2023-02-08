@@ -6,12 +6,12 @@ import CheckoutSteps from './CheckoutSteps';
 
 const PaymentMethod = () => {
   const [paymentMethod, setPaymentMethod] = useState("PayPal");
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
     // dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    history.push("/confirm");
+    navigate("/confirm");
   };
 
   return (

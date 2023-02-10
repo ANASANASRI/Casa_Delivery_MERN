@@ -133,13 +133,13 @@ useEffect(() => {
   // }
 
   return (
-    <>
+    <div className="jj">
     {loading ? (
       <Loader />
     )  : 
 
     <div className="align-items-center login-page">
-       <div className="main-container__content">
+      <div className="main-container__content">
           <div className="col-md-6 content__inputs">
             {error ? <p style={{color: '#ab0606', fontFamily: 'cursive',fontWeight: '600'}}>{error}</p> :''}
             <form
@@ -203,9 +203,6 @@ useEffect(() => {
             
           </div>
 
-          
-          
-
           <div className="col-md-6 content__submit">
             
             <div style={{ cursor: "pointer" }} className="button google-button">
@@ -229,7 +226,7 @@ useEffect(() => {
         </div>
     </div> 
 }
-    </>
+    </div>
   );
 };
 

@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 .login-page {
+  margin-top: 50%;
   border-radius: 4%;
-  box-shadow: 0px 0px 20px #773e3e;
+  box-shadow: 0px 0px 20px hsla(0, 89%, 62%, 0.424);
   display: flex;
+  border: solid black;
   background: linear-gradient( 
-208deg, #FCC45E 0%, #F44748 100%);
+208deg, #f4ad29 0%, #f447476c 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: white;
@@ -57,7 +59,7 @@
 }
 
 .content__input--form > label > input::placeholder {
-  color: rgb(5, 5, 5);
+  color: rgba(5, 5, 5, 0.571);
   font-size: 14px;
 }
 
@@ -71,8 +73,8 @@
   font-weight: bold;
   font-size: 14px;
 }
- .formbutton {
-     text-align: center;
+  .formbutton {
+    text-align: center;
     height: 35px;
     width: 300px;
     border: none;
@@ -173,7 +175,6 @@ a {
 @media screen and (min-width: 801px) {
 
   .main-container__content {
-   
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -181,7 +182,6 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-   
     height: 400px;
     padding: 5%;
   }
@@ -209,4 +209,7 @@ a {
   .content__footer {
     width: 90%;
   }
+}
+.jj{
+  padding-top: 20px;
 }

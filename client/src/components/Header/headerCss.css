@@ -1,7 +1,8 @@
 .navbar {
-  background: linear-gradient(to right, #F44748, #FCC45E);
+  background: linear-gradient(to right, #f4474700, #fcc55e4f);
   background-size: 200% auto;
   animation: move-gradient 15s ease infinite;
+  border-bottom: 1px solid #F44748;
 }
 
 .fas{

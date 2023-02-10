@@ -170,7 +170,7 @@ input:focus {
   }
   /********** Hero animation************/
 .img-fluidd {
-  animation: hero-img-animation 3s ease-in-out infinite;
+  animation: hero-img-animation 6s ease-in-out infinite;
 }
 
 @keyframes hero-img-animation {

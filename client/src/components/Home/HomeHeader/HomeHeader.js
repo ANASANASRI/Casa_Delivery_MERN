@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import homeheader from "./homeheader.css";
+import "./homeheader.css";
 import cd1 from "../../../images/cd1.png";
 import hero from "../../../images/hero.png";
 import about from "../../../images/about.png";

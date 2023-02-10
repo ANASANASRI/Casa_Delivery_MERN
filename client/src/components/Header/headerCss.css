@@ -1,8 +1,18 @@
+.navbar-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .navbar {
-  background: linear-gradient(to right, #f4474700, #fcc55e4f);
-  background-size: 200% auto;
-  animation: move-gradient 15s ease infinite;
-  border-bottom: 1px solid #F44748;
+  border-bottom: 1.4px solid black;
+}
+
+.navbar .fass {
+  color: black;
+}
+
+.navbar .fas {
+  color: black;
 }
 
 .fas{

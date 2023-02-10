@@ -19,8 +19,8 @@ const Header = () => {
     dispatch(logout())
   }
     return (
-      <header>
-        <Navbar className="py-1 navbar navbar" variant="dark"  expand="lg">
+      <header class="navbar-container">
+        <Navbar className="py-1 navbar navbar" variant="dark" expand="lg">
           <Container>
           <Link to="/">
           <Navbar.Brand>

@@ -162,7 +162,7 @@ useEffect(() => {
                 {isError.emailError === false ? (
                   <span></span>
                 ) : (
-                  <span className="error-msg" style={{ color: "red" }}>
+                  <span className="error-msg" style={{ color: "black" }}>
                     Veuillez saisir une adresse e-mail valide
                   </span>
                 )}
@@ -219,7 +219,7 @@ useEffect(() => {
             <div className="content__footer">
               <p>
                 En cliquant sur le bouton "S'inscrire" ci-dessus, vous acceptez notre
-                <strong>conditions d'utilisation</strong>
+                <strong> conditions d'utilisation</strong>
               </p>
             </div>
           </div>

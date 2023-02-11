@@ -2,12 +2,10 @@
 
 .login-page {
   margin-top: 50%;
-  border-radius: 4%;
-  box-shadow: 0px 0px 20px hsla(0, 89%, 62%, 0.424);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #f44747c9;
   display: flex;
-  border: solid black;
-  background: linear-gradient( 
-208deg, #f4ad29 0%, #f447476c 100%);
+  background:#ffffff;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: white;
@@ -25,7 +23,7 @@
     
     margin-top: -25px;
     display: block;
-    color: #F44748;
+    color: #FCC45E;
     font-family: emoji !important;
     font-weight: normal;
 }
@@ -59,7 +57,7 @@
 }
 
 .content__input--form > label > input::placeholder {
-  color: rgba(5, 5, 5, 0.571);
+  color: rgba(5, 5, 5, 0.816);
   font-size: 14px;
 }
 
@@ -176,7 +174,7 @@ a {
 
   .main-container__content {
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #f44747d4;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -212,4 +210,8 @@ a {
 }
 .jj{
   padding-top: 20px;
+}
+
+strong{
+  color: #141414d4;
 }

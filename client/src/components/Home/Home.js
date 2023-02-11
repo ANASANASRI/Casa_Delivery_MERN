@@ -2,6 +2,8 @@ import React, {  useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './ItemList/ItemList';
 import { Col, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import {useDispatch, useSelector} from 'react-redux'
 import { getItems } from '../../redux/actions/itemActions';
 import Loader from '../spinner/Loader';
@@ -55,10 +57,11 @@ const Home = () => {
                     </div>
                     <div className="row">
                     <div className="col-lg-4 py-0 py-lg-5">
-                        <h1 className="mb-3">Devenir coursier</h1>
-                        <h5 className="mb-3">C'est vous le chef ! Livrez avec Casa delivery pour gagner des revenus compétitifs en toute flexibilité et liberté.</h5>
-                        <p>Takimata sed vero vero no sit sed, justo clita duo no duo amet et, nonumy kasd sed dolor eos diam lorem eirmod. Amet sit amet amet no. Est nonumy sed labore eirmod sit magna. Erat at est justo sit ut. Labor diam sed ipsum et eirmod</p>
-                        <a href="" className="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                        <h1 className="mb-3">Devenir<br></br>coursier</h1>
+                        <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Décidez de vos horaires et de votre zone de livraison avec Casa delivery.</h5>
+                        <br></br><h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Bénéficiez d'un revenu stable et compétitif en travaillant à votre propre rythme.</h5>
+                        <br></br><h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Profitez d'une plateforme simple et efficace pour gérer votre activité de livraison en toute sécurité.</h5>
+                        <a href="" className="btn btn-secondary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
                     </div>
                     <div className="col-lg-4 py-5 py-lg-0" style={{ minHeight: '500px' }}>
                         <div className="position-relative h-100">
@@ -66,12 +69,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="col-lg-4 py-0 py-lg-5">
-                        <h1 className="mb-3">Devenir partenaire</h1>
-                        <p>Grandissez avec Casa delivery! Boostez les ventes et accédez à de nouvelles opportunités grâce à notre technologie et à notre base d'utilisateurs !</p>
-                        <h5 className="mb-3"><i className="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
-                        <h5 className="mb-3"><i className="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
-                        <h5 className="mb-3"><i className="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
-                        <a href="" className="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                        <h1 className="mb-3">Devenir<br></br>partenaire</h1>
+                        <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Rejoignez les milliers de restaurants qui ont déjà amélioré leur activité grâce à Casa delivery.</h5>
+                        <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Offrez une expérience de livraison fluide et fiable à vos clients grâce à notre plateforme avancée.</h5>
+                        <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Augmentez votre visibilité en ligne et découvrez de nouveaux marchés grâce à notre base d'utilisateurs en constante croissance.</h5>
+                        <a href="" className="btn btn-primary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
                     </div>
                     </div>
                 </div>

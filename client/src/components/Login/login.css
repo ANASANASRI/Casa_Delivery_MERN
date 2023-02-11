@@ -174,7 +174,7 @@ a {
 
   .main-container__content {
     box-sizing: border-box;
-    background-color: #f44747d4;
+    background-color: #420f0f8d;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -214,4 +214,11 @@ a {
 
 strong{
   color: #141414d4;
+}
+
+.login-page{
+  background-image: url(../../images/Frame2.jpg);
+    background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

@@ -61,7 +61,7 @@ const Home = () => {
                         <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Décidez de vos horaires et de votre zone de livraison avec Casa delivery.</h5>
                         <br></br><h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Bénéficiez d'un revenu stable et compétitif en travaillant à votre propre rythme.</h5>
                         <br></br><h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Profitez d'une plateforme simple et efficace pour gérer votre activité de livraison en toute sécurité.</h5>
-                        <a href="" className="btn btn-secondary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
+                        <a href="/" className="btn btn-secondary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
                     </div>
                     <div className="col-lg-4 py-5 py-lg-0" style={{ minHeight: '500px' }}>
                         <div className="position-relative h-100">
@@ -73,7 +73,7 @@ const Home = () => {
                         <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Rejoignez les milliers de restaurants qui ont déjà amélioré leur activité grâce à Casa delivery.</h5>
                         <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Offrez une expérience de livraison fluide et fiable à vos clients grâce à notre plateforme avancée.</h5>
                         <h5 className="mb-3"><FontAwesomeIcon icon={faCheck} className="text-primary mr-3" /> Augmentez votre visibilité en ligne et découvrez de nouveaux marchés grâce à notre base d'utilisateurs en constante croissance.</h5>
-                        <a href="" className="btn btn-primary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
+                        <a href="/" className="btn btn-primary font-weight-bold py-2 px-4 mt-2">apprendre encore plus</a>
                     </div>
                     </div>
                 </div>

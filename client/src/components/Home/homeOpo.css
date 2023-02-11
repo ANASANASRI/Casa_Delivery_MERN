@@ -1,0 +1,35 @@
+/********** Opportunités ************/
+h1,
+h2,
+.font-weight-bold {
+font-weight: 700 !important;
+}
+
+h3,
+h4,
+.font-weight-medium {
+font-weight: 500 !important;
+}
+
+h5,
+h6,
+.font-weight-normal {
+font-weight: 400 !important;
+}
+
+.section-title {
+position: relative;
+padding: 115px 0 35px 0;
+text-align: center;
+}
+
+.section-title::after {
+position: absolute;
+content: "";
+width: 4px;
+height: 100px;
+top: 0;
+left: 50%;
+margin-left: 1px;
+background: #F44748;
+}

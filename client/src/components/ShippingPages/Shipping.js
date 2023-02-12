@@ -36,7 +36,7 @@ const Shipping = () => {
           <Form.Label>Adresse</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter address'
+            placeholder="Entrer l'adresse"
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -44,10 +44,10 @@ const Shipping = () => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>Commune</Form.Label>
+          <Form.Label>ville</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter city'
+            placeholder='Entrez la ville'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -58,7 +58,7 @@ const Shipping = () => {
           <Form.Label>Code Postal</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter postal code'
+            placeholder='Entrez le Code Postal'
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
@@ -69,7 +69,7 @@ const Shipping = () => {
           <Form.Label>Num de telephone</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter Phone No'
+            placeholder='Entrez le numéro de téléphone'
             value={phone}
             required
             onChange={(e) => setPhone(e.target.value)}

@@ -1,115 +1,65 @@
+import "./livreurCss.css";
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 
-const DeliveryOrder = () => {
-  const [orderDetails, setOrderDetails] = useState({
-    recipientName: "",
-    recipientAddress: "",
-    recipientPhone: "",
-    deliveryInstructions: "",
-  });
-  const [orderAccepted, setOrderAccepted] = useState(null);
+const CommandCard = ({ order }) => {
+  const [isAccepted, setIsAccepted] = useState(false);
 
-  const handleInputChange = (event) => {
-    setOrderDetails({
-      ...orderDetails,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleAcceptOrder = () => {
-    setOrderAccepted(true);
-  };
-
-  const handleRejectOrder = () => {
-    setOrderAccepted(false);
+  const handleAccept = () => {
+    setIsAccepted(true);
   };
 
   return (
-    <Container className="my-5">
-      {orderAccepted === null ? (
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <h3 className="text-center mb-5">Order Details</h3>
-            <Form>
-              <Form.Group controlId="formRecipientName">
-                <Form.Label>Recipient Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="recipientName"
-                  value={orderDetails.recipientName}
-                  onChange={handleInputChange}
-                  placeholder="Enter recipient name"
-                  readOnly
-                />
-              </Form.Group>
-              <Form.Group controlId="formRecipientAddress">
-                <Form.Label>Recipient Address</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="recipientAddress"
-                  value={orderDetails.recipientAddress}
-                  onChange={handleInputChange}
-                  placeholder="Enter recipient address"
-                  readOnly
-                />
-              </Form.Group>
-              <Form.Group controlId="formRecipientPhone">
-                <Form.Label>Recipient Phone</Form.Label>
-                <Form.Control
-                  type="tel"
-                  name="recipientPhone"
-                  value={orderDetails.recipientPhone}
-                  onChange={handleInputChange}
-                  placeholder="Enter recipient phone"
-                  readOnly
-                />
-              </Form.Group>
-              <Form.Group controlId="formDeliveryInstructions">
-                <Form.Label>Delivery Instructions</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows="3"
-                  name="deliveryInstructions"
-                  value={orderDetails.deliveryInstructions}
-                  onChange={handleInputChange}
-                  placeholder="Enter delivery instructions (optional)"
-                  readOnly
-                />
-              </Form.Group>
-              <Button variant="primary" onClick={handleAcceptOrder}>
-                Accept Order
-              </Button>{" "}
-              <Button variant="secondary" onClick={handleRejectOrder}>
-                Reject Order
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      ) : (
-        <Row className="my-5">
-          <Col md={{ span: 6, offset: 3 }}>
-            <Card>
-              <Card.Body>
-                <Card.Title className="text-center">
-                  {orderAccepted ? "Order Accepted" : "Order Rejected"}
-                </Card.Title>
-                <Button
-                  variant="secondary"
-                  className="mt-5 mb-3"
-                  onClick={() => setOrderAccepted(null)}
-                >
-                  {orderAccepted
-                    ? "Accept Another Order"
-                    : "Try Another Order"}
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+    <div className="command-card">
+      <h3>Commande #{order.id}</h3>
+      <p>Adresse de livraison: {order.deliveryAddress}</p>
+      <p>Nom du client: {order.customerName}</p>
+      <p>Montant: {order.amount}</p>
+      {!isAccepted && (
+        <button onClick={handleAccept}>Accepter</button>
       )}
-    </Container>
+      {isAccepted && <p>Commande acceptée</p>}
+    </div>
   );
 };
 
-export default DeliveryOrder;
+const DeliveryPage = () => {
+  const [acceptedOrderId, setAcceptedOrderId] = useState(null);
+  const orders = [
+    {
+      id: 1,
+      deliveryAddress: "123 Main St.",
+      customerName: "John Doe",
+      amount: 25,
+    },
+    {
+      id: 2,
+      deliveryAddress: "456 Oak Ave.",
+      customerName: "Jane Doe",
+      amount: 15,
+    },
+    {
+      id: 3,
+      deliveryAddress: "789 Pine St.",
+      customerName: "Jim Smith",
+      amount: 35,
+    },
+  ];
+
+  return (
+    <div className="delivery-page">
+      <h2>Commandes en attente</h2>
+      {orders.map((order) => (
+        <CommandCard
+          key={order.id}
+          order={order}
+          isAccepted={acceptedOrderId === order.id}
+          onAccept={() => {
+            setAcceptedOrderId(order.id);
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default DeliveryPage;

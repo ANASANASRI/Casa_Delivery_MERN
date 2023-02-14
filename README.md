@@ -2,8 +2,9 @@
 🌐 MERN Stack
 </h1>
 <h1 align="center">
-Casa Delivery <img src="https://github.com/ANASANASRI/Casa_Delivery_MERN/blob/master/client/public/logo192.png" />
+Casa Delivery
 </h1>
+ <img align="center" src="https://github.com/ANASANASRI/Casa_Delivery_MERN/blob/master/client/public/logo192.png" />
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>

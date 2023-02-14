@@ -22,10 +22,10 @@ $ yarn # or npm i
 # Screenshots of this project
 
 User visit public and Home page
-![User visit public and Home page](http://i.imgur.com/ORCGHHY.png)
+![User visit public and Home page](https://github.com/ANASANASRI/Casa_Delivery_MERN/blob/master/screenshot-casa-delivery/Image1.png)
 
 User can sign in or sign up
-![User can sign in or sign up](http://i.imgur.com/rrmbU5I.png)
+![User can sign in or sign up](https://github.com/ANASANASRI/Casa_Delivery_MERN/blob/master/screenshot-casa-delivery/frame1.png)
 
 After signing in user can go to account route and make request to token-protected API endpoint
 ![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)

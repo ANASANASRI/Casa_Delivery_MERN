@@ -1,18 +1,13 @@
 <h1 align="center">
 🌐 MERN Stack
 </h1>
+<h1 align="center">
+Casa Delivery
+</h1>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
 
-<p align="center">
-   <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
-      <img src="https://img.shields.io/badge/License-MIT-green.svg" />
-   </a>
-   <a href="https://circleci.com/gh/amazingandyyy/mern">
-      <img src="https://circleci.com/gh/amazingandyyy/mern.svg?style=svg" />
-   </a>
-</p>
 
 > MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs.
 
@@ -20,7 +15,7 @@ MERN stack is the idea of using Javascript/Node for fullstack web development.
 
 ## clone or download
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern.git
+$ git clone https://github.com/ANASANASRI/Casa_Delivery_MERN
 $ yarn # or npm i
 ```
 
